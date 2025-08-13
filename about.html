@@ -5,44 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Vijus</title>
 
-  <!-- Bootstrap 5 CSS -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Custom CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
-    .bg-image {
-      background-size: cover;
+    h1, h2, h3, .navbar-brand {
+      font-family: 'Playfair Display', serif;
+    }
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                  url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80');
       background-position: center;
-      background-attachment: fixed;
+      background-size: cover;
+      height: 60vh;
+    }
+    .nav-link {
       position: relative;
     }
-    .bg-overlay::before {
-      content: "";
+    .nav-link:after {
+      content: '';
       position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
+      width: 0;
+      height: 2px;
+      background: #dc3545;
+      left: 0;
+      bottom: -2px;
+      transition: width 0.3s;
     }
-    .bg-overlay > .container {
-      position: relative;
-      z-index: 2;
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    .card {
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.75rem;
     }
   </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-3">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Vijus</a>
+    <a class="navbar-brand fw-bold fs-3" href="index.html">
+      <span class="text-danger">Vi</span>jus
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -56,63 +76,72 @@
   </div>
 </nav>
 
-<!-- About Hero -->
-<header class="py-5 text-white text-center bg-image bg-overlay" style="background-image:url('https://img.freepik.com/free-photo/blurred-dinning_1203-289.jpg?semt=ais_hybrid&w=740'); margin-top:56px;">
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center text-white">
+  <div class="container text-center">
+    <h1 class="display-2 fw-bold mb-4">Our Story</h1>
+    <p class="lead mb-0 fs-4">A tradition of excellence since 1995</p>
+  </div>
+</section>
+
+<!-- Story Section -->
+<section class="py-5">
   <div class="container">
-    <h1 class="fw-bold">About Vijus</h1>
-    <p class="lead">Serving food that connects with people</p>
-  </div>
-</header>
-
-<!-- Who We Are with background -->
-<section class="py-5 bg-image bg-overlay" style="background-image:url('https://img.freepik.com/free-photo/blurred-dinning_1203-289.jpg?semt=ais_hybrid&w=740');">
-  <div class="container text-white">
-    <div class="row align-items-center g-4">
+    <div class="row align-items-center g-5">
       <div class="col-lg-6">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxu3RO7rHgJeeLKY9d2ekdZOj_9lJGRxp3qg&s" alt="Restaurant Interior" class="img-fluid rounded shadow-lg" style="max-width: 420px;">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0" class="img-fluid rounded-4 shadow" alt="Our Story">
       </div>
       <div class="col-lg-6">
-        <h2 class="fw-bold">Who We Are</h2>
-        <p>At Vijus, we believe that great food brings people together. From intimate dinners to lively celebrations, our goal is to create a dining experience that feels personal, warm, and memorable.</p>
-        <p>Our menu is inspired by seasonal produce, traditional recipes, and a passion for flavour. Every dish is crafted with care, aiming to delight your taste buds and make you feel right at home.</p>
+        <h2 class="display-5 fw-bold mb-4">A Culinary Journey</h2>
+        <p class="lead text-muted">Started in 1995, Vijus has been serving authentic cuisine with a modern twist. Our commitment to quality and service has made us one of the most beloved restaurants in the city.</p>
+        <div class="d-flex gap-3 mt-4">
+          <a href="contact.html" class="btn btn-danger">Contact Us</a>
+          <a href="menu.html" class="btn btn-outline-dark">View Menu</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Why Choose Us -->
-<section class="py-5 bg-image bg-overlay" style="background-image:url('https://img.freepik.com/free-photo/blurred-dinning_1203-289.jpg?semt=ais_hybrid&w=740');">
-  <div class="container text-white">
-    <div class="text-center mb-4">
-      <h2 class="fw-bold">Why Our Guests Love Us</h2>
-      <p>We focus on what matters most to you</p>
-    </div>
+<!-- Values Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center display-5 fw-bold mb-5">Our Values</h2>
     <div class="row g-4">
-      <div class="col-md-4 text-center">
-        <i class="bi bi-emoji-smile fs-1 text-warning mb-3"></i>
-        <h5>Friendly Atmosphere</h5>
-        <p>A warm, welcoming space where you can relax and enjoy your time.</p>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <div class="feature-icon bg-danger text-white mx-auto mb-4 d-flex align-items-center justify-content-center">
+              <i class="bi bi-heart-fill fs-2"></i>
+            </div>
+            <h3 class="h4 mb-3">Passion</h3>
+            <p class="text-muted mb-0">We pour our hearts into every dish we serve</p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4 text-center">
-        <i class="bi bi-heart-fill fs-1 text-danger mb-3"></i>
-        <h5>Quality You Can Taste</h5>
-        <p>Fresh ingredients, prepared with skill and care, for unforgettable flavours.</p>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <div class="feature-icon bg-warning text-white mx-auto mb-4 d-flex align-items-center justify-content-center">
+              <i class="bi bi-star-fill fs-2"></i>
+            </div>
+            <h3 class="h4 mb-3">Quality</h3>
+            <p class="text-muted mb-0">Only the finest ingredients, expertly prepared</p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4 text-center">
-        <i class="bi bi-clock-history fs-1 text-info mb-3"></i>
-        <h5>Always On Time</h5>
-        <p>Whether dining in or ordering out, we value your time and deliver promptly.</p>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <div class="feature-icon bg-success text-white mx-auto mb-4 d-flex align-items-center justify-content-center">
+              <i class="bi bi-people-fill fs-2"></i>
+            </div>
+            <h3 class="h4 mb-3">Service</h3>
+            <p class="text-muted mb-0">Attentive and friendly, making you feel at home</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Call to Action -->
-<section class="py-5 text-center bg-image bg-overlay" style="background-image:url('https://img.freepik.com/free-photo/blurred-dinning_1203-289.jpg?semt=ais_hybrid&w=740');">
-  <div class="container text-white">
-    <h3 class="fw-bold">Come Experience Vijus</h3>
-    <p class="mb-4">Your table is waiting — discover the flavours everyone’s talking about.</p>
-    <a href="index.html#menu" class="btn btn-danger btn-lg">View Menu</a>
   </div>
 </section>
 
